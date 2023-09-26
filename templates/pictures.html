@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <style>
+    .movie-container {
+      max-width: 400px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      font-family: 'Your-Desired-Font', sans-serif;
+    }
+
+    .movie-title {
+      font-size: 24px;
+      margin: 10px 0;
+      color: #333;
+    }
+
+    .movie-director {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #555;
+    }
+
+    .movie-description {
+      font-size: 16px;
+      margin: 10px 0;
+      color: #777;
+    }
+
+    .movie-image {
+      max-width: 100%;
+    }
+  </style>
+
+  <div class="movie-container">
+    <h3 class="movie-title">{{ picture['title'] }}</h3>
+    <h4 class="movie-director">{{ picture['director'] }}</h4>
+    <p class="movie-description">{{ picture['description'] }}</p>
+    <img class="movie-image" src="{{ picture['image_url'] }}" alt="">
+  </div>
+{% endblock %}

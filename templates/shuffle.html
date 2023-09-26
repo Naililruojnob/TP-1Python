@@ -1,0 +1,41 @@
+{% extends 'base.html'  %}
+
+{% block content %}
+
+<ul>
+
+    {% for picture in pictures %}
+
+    <li><a href="/api/picture/{{picture['id']}}">{{ picture['title'] }}</a></li>
+    
+    {% endfor %}
+    
+</ul>
+<style>
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        margin: 10px 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        font-size: 16px;
+        border: 2px solid #333;
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: inline-block;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    a:hover {
+        background-color: #333;
+        color: #fff;
+    }
+</style>
+{% endblock %}
